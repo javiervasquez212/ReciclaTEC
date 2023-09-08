@@ -1,11 +1,12 @@
 import React from 'react'
 import '../estilos/Inicial.css'
 function Inicial(props) {
+  const altText= `foto de ${props.nombre}`
   return (
     <div className='contenedor-persona'>
       <img className='imagen-Persona'
       src={require(`../Imagenes/Foto-${props.imagen}.${props.extensionImagen}`)}
-      alt='Foto de Persona' />
+      alt={altText} />
       <div className='contenedor-texto-persona'>
         <p className='nombre-persona'>{props.nombre}</p>
         <p className='cargo-persona'>{props.cargo}</p>
