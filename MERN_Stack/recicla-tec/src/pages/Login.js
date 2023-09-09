@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../estilos/Login.css'
 import { Link } from 'react-router-dom';
+import Button from '../components/Buttons/Button.js';
 export default class Login extends Component {
   constructor(props) {
     super(props);
@@ -49,9 +50,11 @@ export default class Login extends Component {
                 value={password}
                 onChange={this.handlePasswordChange} />
                 </div>
-            <button type="button" onClick={this.handleLogin}>
-              Iniciar sesión
-            </button>
+            <Button buttonClassname="boton-anaranjado" 
+            buttonText="Iniciar sesión"
+            handleOnClick={this.handleLogin} 
+            />
+            
             <p>
               ¿Not a member? <Link to="/signUp">Sign up</Link>
             </p>
