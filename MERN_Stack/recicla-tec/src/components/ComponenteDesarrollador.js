@@ -1,5 +1,5 @@
 import React from 'react'
-import '../estilos/Inicial.css'
+import '../estilos/ComponenteDesarrollador.css'
 function Inicial(props) {
   const altText= `foto de ${props.nombre}`
   return (

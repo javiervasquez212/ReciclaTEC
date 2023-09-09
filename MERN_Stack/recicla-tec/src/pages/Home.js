@@ -7,7 +7,7 @@ export default class Home extends Component {
     return (
         <div className='contenedor-principal'>
         <InicialNavigation/>
-        <h1>Por qué es Importante reciclatec para los desarrolladores </h1>
+        <h1>¿Por qué es importante Reciclatec para los desarrolladores?</h1>
         <ComponenteDesarrollador {...datosMario} />
         <ComponenteDesarrollador {...datosAxel} />
         <ComponenteDesarrollador {...datosJavier} />

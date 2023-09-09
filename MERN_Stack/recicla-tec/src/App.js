@@ -1,10 +1,8 @@
 import './App.css';
-//import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-//import Login from './components/Login.js'
-//import SignUp from './components/SignUp.js'
-//import Navigation from './components/Navigation.js'
+import Login from './pages/Login.js'
+import SignUp from './pages/SignUp.js'
 import Home from './pages/Home'
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // <Navigation/>
 //<Routes>
@@ -15,7 +13,15 @@ import Home from './pages/Home'
 function App() {
  return (
     <div className='App'>
-        <Home/>
+    <Router>
+      <Routes>
+      <Route path="/" element={<Home />}/>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signUp" element={<SignUp />} />
+        {/* Otras rutas */}
+      </Routes>
+    </Router>
+    
     </div>
  );
 }
