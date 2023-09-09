@@ -49,9 +49,12 @@ export default class Login extends Component {
                 value={password}
                 onChange={this.handlePasswordChange} />
                 </div>
-            <button type="button" onClick={this.handleLogin}>
-              Iniciar sesión
-            </button>
+                <div className='button-container'>
+                  <button type="button" onClick={this.handleLogin}>
+                  Iniciar sesión
+              </button>
+                </div>
+            
             <p>
               ¿Not a member? <Link to="/signUp">Sign up</Link>
             </p>

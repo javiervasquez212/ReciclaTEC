@@ -1,47 +1,50 @@
 import React, { Component } from 'react'
-
+import '../estilos/Login.css'
+import { Link } from 'react-router-dom';
 export default class SignUp extends Component {
+  
+  constructor(props) {
+    this.state = {
+      fullName: "",
+      email: "",
+      password: "",
+    };
+  }
+
+  handleFullNameChange = (event) => {
+    this.setState({
+      fullName: event.target.value
+    })
+  };
+
+  handleEmailChange = (event) => {
+    this.setState({
+      email: event.target.value
+    })
+  };
+
+  handlePasswordChange = (event) => {
+    this.setState({
+      password: event.target.value
+    })
+  }
   render() {
     return (
-      <div>
-      <h2>Registro</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Nombre completo:
-          <input
-            type="text"
-            name="nombreCompleto"
-            value={formData.nombreCompleto}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Email:
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Contraseña:
-          <input
-            type="password"
-            name="contrasena"
-            value={formData.contrasena}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <br />
-        <button type="submit">Registrarse</button>
-      </form>
-    </div>
+      <div className="contenedorPrincipal">
+        <div className="contenedorSignUp"> 
+          <h1>Sign Up</h1>  
+          <form>
+            <div className="contenedorNombre">
+              <input
+              type="text"
+              placeholder='Nombre Completo'
+              id='fullName'
+              value={this.fullName}
+              onChange={this.handleFullNameChange}/>
+            </div>
+          </form>
+        </div>
+      </div>
     )
   }
 }
