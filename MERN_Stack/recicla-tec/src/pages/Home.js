@@ -5,7 +5,7 @@ import InicialNavigation from '../components/InicialNavigation.js'
 export default class Home extends Component {
   render() {
     return (
-      <div className='contenedor-principal'>
+      <div className='contenedor-developer'>
         <InicialNavigation />
         <h1>¿Por qué es importante Reciclatec para los desarrolladores?</h1>
         {datosDesarrolladores.map((desarrollador, index) => (
