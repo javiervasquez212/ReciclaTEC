@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Navigation() {
   return (
-
+    <header>
       <nav className='InicialNav'>
         <a href= '/' className='site-title'> Recicla-Tec</a>
         <ul>
@@ -12,6 +12,6 @@ export default function Navigation() {
           <li> <Link to="/signUp">Sign up</Link> </li>
         </ul>
       </nav>
-
+    </header>
   );
 }

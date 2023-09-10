@@ -5,10 +5,9 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
     return (
       <footer className="footer">
-        <ul>
-          <li> <Link to="/desarrolladores">Devs</Link> </li>
-          
-        </ul>
+        <p>
+        <Link to="/desarrolladores">Desarrolladores</Link>
+        </p>
       </footer>
     );
   }

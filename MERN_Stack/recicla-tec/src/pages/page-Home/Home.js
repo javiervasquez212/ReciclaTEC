@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import InicialNavigation from '../../components/componente-inicialNav/InicialNavigation.js'
+import './Home.css'
 import Footer from '../../components/componente-footer/Footer.js'
 
 export default class Home extends Component {

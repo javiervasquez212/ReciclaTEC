@@ -3,6 +3,7 @@ import './Login.css'
 import { Link } from 'react-router-dom';
 import Button from '../../components/Buttons/Button.js';
 import TextInput from '../../components/componente-EntradaTexto/componenteEntradaTexto';
+import InicialNavigation from '../../components/componente-inicialNav/InicialNavigation.js'
 export default class SignUp extends Component {
   constructor(props) {
     super(props);
@@ -42,6 +43,8 @@ export default class SignUp extends Component {
   render() {
     const { username, email, password, password2 } = this.state;
     return (
+      <>
+      <InicialNavigation />
       <div className='contenedor-principal'> 
         <div className='contenedor-login'>  
           <h1 className='titulo-sign-up'>Registrarse</h1>
@@ -89,6 +92,7 @@ export default class SignUp extends Component {
           </form>
         </div>
       </div>
+      </>
     )
   }
 }

@@ -56,7 +56,7 @@ export default class mainPage extends Component {
             <div className='componente-final'>
             <h1>Material reciclado</h1>
 
-            <a><img src={require('../../Imagenes/Foto-Dona.png')} alt="Logo" /></a>
+            <img src={require('../../Imagenes/Foto-Dona.png')} alt="Dona" />
             </div>
 
         </div>
