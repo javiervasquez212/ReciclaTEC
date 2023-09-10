@@ -20,6 +20,7 @@ input {
   font-weight: 700;
   font-style: bold;
   margin-bottom: 50%;
+  background-color: #ff8303;
 }
 .contenedor-user {
   display: flex;
@@ -28,7 +29,9 @@ input {
   margin-bottom: 10%;
   margin-top: 10%;
 }
-
+.titulo-sign-up {
+  align-items: center;
+}
 .contenedor-password {
   display: flex;
   justify-content: center;
@@ -40,29 +43,15 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10%;
-  margin-top: 10%;
+  margin-bottom: 0%;
+  margin-top: 0%;
 }
 
 .button-container {
   display: flex;
   justify-content: space-around;
 }
-button {
-  flex: 0.5;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-  padding: 10px 20px;
-  background-color: #ff8303;
-  stroke-width: 1px;
-  stroke: #000;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  border-radius: 20px;
-  font-size: 1.7rem;
-  font-style: lighter;
-  display: flex;
-}
+
 p {
   font-size: 1.5rem;
   font-style: bold;

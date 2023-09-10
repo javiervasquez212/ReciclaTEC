@@ -44,7 +44,7 @@ export default class SignUp extends Component {
     return (
       <div className='contenedor-principal'> 
         <div className='contenedor-login'>  
-          <h1>Registrarse</h1>
+          <h1 className='titulo-sign-up'>Registrarse</h1>
           <form>
             <div>
             <TextInput inputClassname="contenedor-user"
