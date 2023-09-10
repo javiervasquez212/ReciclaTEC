@@ -6,17 +6,3 @@
     background-color: white;
   }
 
-.contenedor-user {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10%;
-    margin-top: 10%;
-}
-.contenedor-password {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10%;
-    margin-top: 10%;
-  }

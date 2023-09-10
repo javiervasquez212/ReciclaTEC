@@ -42,11 +42,11 @@ export default class SignUp extends Component {
   render() {
     const { username, email, password, password2 } = this.state;
     return (
-      <div className='Contenedor-principal'> 
-        <div className='Contenedor-Signup'>  
+      <div className='contenedor-principal'> 
+        <div className='contenedor-login'>  
           <h1>Registrarse</h1>
           <form>
-            <div className='Contenedor-user'>
+            <div className='contenedor-user'>
             <TextInput inputClassname="contenedor-user"
                 inputType="text"
                 inputValue={username}
@@ -54,7 +54,7 @@ export default class SignUp extends Component {
                 handleOnChange={this.handleUsernameChange}
                 />
             </div>
-            <div className='Contenedor-email'>
+            <div className='contenedor-email'>
             <TextInput inputClassname="contenedor-email"
                 inputType="text"
                 inputValue={email}
@@ -62,7 +62,7 @@ export default class SignUp extends Component {
                 handleOnChange={this.handleEmailChange}
                 />
             </div>
-            <div className='Contenedor-password'>
+            <div className='contenedor-password'>
             <TextInput inputClassname="contenedor-password"
                 inputType="password" 
                 inputValue={password}
@@ -70,7 +70,7 @@ export default class SignUp extends Component {
                 handleOnChange={this.handlePasswordChange}
                 />
             </div>
-            <div className='Contenedor-password2'>
+            <div className='contenedor-password'>
             <TextInput inputClassname="contenedor-password2"
                 inputType="password"
                 inputValue={password2}

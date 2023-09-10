@@ -32,7 +32,14 @@ input {
   justify-content: center;
   align-items: center;
   margin-bottom: 10%;
-  margin-top: 30%;
+  margin-top: 10%;
+}
+.contenedor-email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10%;
+  margin-top: 10%;
 }
 button {
   background-color: #ff8303;
