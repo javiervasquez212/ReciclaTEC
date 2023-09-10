@@ -1,8 +1,11 @@
 .contenedor-principal {
-    display: flex;
-    flex-direction: column;
-    height: 80vh;
-    width: 50vh;
-    background-color: white;
-  }
-
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 80vh;
+  width: 50vh;
+  background-color: white;
+}
