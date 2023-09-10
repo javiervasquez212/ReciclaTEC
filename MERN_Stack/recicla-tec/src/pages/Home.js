@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { datosDesarrolladores } from '../Datos/DatosIniciales'; // Importa los datos
 import ComponenteDesarrollador from '../components/componente-desarrollador/ComponenteDesarrollador.js'
 import InicialNavigation from '../components/InicialNavigation.js'
+
 export default class Home extends Component {
   render() {
     return (
