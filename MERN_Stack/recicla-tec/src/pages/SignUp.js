@@ -1,47 +1,94 @@
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
+import '../estilos/Login.css'
+import { Link } from 'react-router-dom';
+import Button from '../components/Buttons/Button.js';
+import TextInput from '../components/componente-EntradaTexto/componenteEntradaTexto';
 export default class SignUp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      password: '',
+      email: '',
+      password2: '',
+    };
+  }
+  handleUsernameChange = (event) => {
+    this.setState({ username: event.target.value });
+  };
+
+  handlePasswordChange = (event) => {
+    this.setState({ password: event.target.value });
+  };
+
+  handleEmailChange = (event) => {
+    this.setState({ email: event.target.value });
+  };
+
+  handlePassword2Change = (event) => { 
+    this.setState({ password2: event.target.value });
+  };
+
+  handleSignUp = () => {
+    const { username, password, email, password2 } = this.state;
+    // Aquí debes implementar la lógica de autenticación
+    // Puedes enviar los datos al servidor y verificar la autenticación
+    console.log(`Usuario: ${username}, Contraseña: ${password}, Email: ${email}, Confirmar contraseña: ${password2}`);
+    return(
+      <div> hola</div>
+    )
+  };
+
   render() {
+    const { username, email, password, password2 } = this.state;
     return (
-      <div>
-      <h2>Registro</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Nombre completo:
-          <input
-            type="text"
-            name="nombreCompleto"
-            value={formData.nombreCompleto}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Email:
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Contraseña:
-          <input
-            type="password"
-            name="contrasena"
-            value={formData.contrasena}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <br />
-        <button type="submit">Registrarse</button>
-      </form>
-    </div>
+      <div className='Contenedor-principal'> 
+        <div className='Contenedor-Signup'>  
+          <h1>Registrarse</h1>
+          <form>
+            <div className='Contenedor-user'>
+            <TextInput inputClassname="contenedor-user"
+                inputType="text"
+                inputValue={username}
+                placeholder="Nombre completo"
+                handleOnChange={this.handleUsernameChange}
+                />
+            </div>
+            <div className='Contenedor-email'>
+            <TextInput inputClassname="contenedor-email"
+                inputType="text"
+                inputValue={email}
+                placeholder="Correo electrónico"
+                handleOnChange={this.handleEmailChange}
+                />
+            </div>
+            <div className='Contenedor-password'>
+            <TextInput inputClassname="contenedor-password"
+                inputType="password" 
+                inputValue={password}
+                placeholder="Contraseña"
+                handleOnChange={this.handlePasswordChange}
+                />
+            </div>
+            <div className='Contenedor-password2'>
+            <TextInput inputClassname="contenedor-password2"
+                inputType="password"
+                inputValue={password2}
+                placeholder="Confirmar contraseña"
+                handleOnChange={this.handlePassword2Change}
+                />
+            </div>
+            <div>
+            <Button buttonClassname="boton-anaranjado"
+              buttonText="Registrarse"
+              handleOnClick={this.handleSignUp}/>
+            </div>
+            <p>
+              ¿Ya tienes una cuenta? <Link to="/login">Iniciar sesión</Link>
+            </p>
+          </form>
+        </div>
+      </div>
     )
   }
 }
