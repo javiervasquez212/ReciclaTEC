@@ -1,5 +1,5 @@
 import React from 'react'
-import '../estilos/InicialNavigation.css'
+import './InicialNavigation.css'
 import { Link } from 'react-router-dom';
 
 export default function Navigation() {

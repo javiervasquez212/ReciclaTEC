@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import '../estilos/Login.css'
+import './Login.css'
 import { Link } from 'react-router-dom';
-import Button from '../components/Buttons/Button.js';
-import TextInput from '../components/componente-EntradaTexto/componenteEntradaTexto';
+import Button from '../../components/Buttons/Button.js';
+import TextInput from '../../components/componente-EntradaTexto/componenteEntradaTexto';
+
+import InicialNavigation from '../../components/componente-inicialNav/InicialNavigation.js'
+
 export default class Login extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +37,10 @@ export default class Login extends Component {
     const { username, password } = this.state;
 
     return (
+      <>  
+      <InicialNavigation />
       <div className='contenedor-principal'>
+        
         <div className='contenedor-login'>
           <h1>Iniciar Sesión</h1>
           <form>
@@ -66,6 +72,7 @@ export default class Login extends Component {
           </form>
         </div>
       </div>
+      </>
     );
   }
 }

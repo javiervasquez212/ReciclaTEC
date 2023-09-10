@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import '../estilos/Login.css'
+import './Login.css'
 import { Link } from 'react-router-dom';
-import Button from '../components/Buttons/Button.js';
-import TextInput from '../components/componente-EntradaTexto/componenteEntradaTexto';
+import Button from '../../components/Buttons/Button.js';
+import TextInput from '../../components/componente-EntradaTexto/componenteEntradaTexto';
 export default class SignUp extends Component {
   constructor(props) {
     super(props);

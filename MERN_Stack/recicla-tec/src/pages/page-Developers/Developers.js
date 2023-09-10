@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { datosDesarrolladores } from '../Datos/DatosIniciales'; // Importa los datos
-import ComponenteDesarrollador from '../components/componente-desarrollador/ComponenteDesarrollador.js'
-import InicialNavigation from '../components/InicialNavigation.js'
+import { datosDesarrolladores } from '../../Datos/DatosIniciales'; // Importa los datos
+import ComponenteDesarrollador from '../../components/componente-desarrollador/ComponenteDesarrollador.js'
+import InicialNavigation from '../../components/componente-inicialNav/InicialNavigation.js'
 
-export default class Home extends Component {
+export default class developers extends Component {
   render() {
     return (
       <div className='contenedor-developer'>

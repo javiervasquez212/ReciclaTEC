@@ -1,7 +1,8 @@
 import './App.css';
-import Login from './pages/Login.js'
-import SignUp from './pages/SignUp.js'
-import Home from './pages/Home'
+import Login from './pages/page-Log-Sign/Login.js'
+import SignUp from './pages/page-Log-Sign/SignUp.js'
+import Home from './pages/page-Home/Home'
+import developers from './pages/page-Developers/Developers';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // <Navigation/>
