@@ -3,7 +3,16 @@ export default class mainPage extends Component {
     render() {
       return (
         <div>
-            <h1>ReciclaTec</h1>
+            <div className='componente-encabezado'>
+
+            </div>
+            <div className='componente-medio'>
+
+            </div>
+            <div className='componente-final'>
+              
+            </div>
+
         </div>
       )
     }

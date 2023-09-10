@@ -10,7 +10,7 @@ function IconButton(props) {
       onClick={handleOnClick}
       disabled={disabled}
     >
-      {icon && <span>{icon}</span>}
+      {icon && <img src={icon}  />}
       {buttonText}
     </button>
   );

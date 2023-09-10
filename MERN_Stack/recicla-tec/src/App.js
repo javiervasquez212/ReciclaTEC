@@ -2,7 +2,8 @@ import './App.css';
 import Login from './pages/page-Log-Sign/Login.js'
 import SignUp from './pages/page-Log-Sign/SignUp.js'
 import Home from './pages/page-Home/Home'
-import developers from './pages/page-Developers/Developers';
+import Developers from './pages/page-Developers/Developers.js';
+import Main from './pages/page-Main/Main.js';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // <Navigation/>
@@ -19,6 +20,8 @@ function App() {
       <Route path="/" element={<Home />}/>
         <Route path="/login" element={<Login />} />
         <Route path="/signUp" element={<SignUp />} />
+        <Route path="/desarrolladores" element={<Developers />} />
+        <Route path="/main" element={<Main />} />
         {/* Otras rutas */}
       </Routes>
     </Router>

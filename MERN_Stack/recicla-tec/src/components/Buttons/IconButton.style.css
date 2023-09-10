@@ -9,3 +9,21 @@
   font-style: lighter;
   padding: 10px;
 }
+
+.boton-imagen {
+  /* Estilos generales para el botón, como colores, tamaño de fuente, etc. */
+  
+  
+  
+  padding: 200px 200px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.contenedor-botones img {
+  /* Ajusta el tamaño de la imagen según tus necesidades */
+  width: 566px;
+  height: 566px;
+  margin-right: 0px; /* Espacio entre la imagen y el texto del botón */
+  /* Otros estilos de la imagen, como margen, padding, etc. */
+}
