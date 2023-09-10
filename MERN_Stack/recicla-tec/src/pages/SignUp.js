@@ -46,7 +46,7 @@ export default class SignUp extends Component {
         <div className='contenedor-login'>  
           <h1>Registrarse</h1>
           <form>
-            <div className='contenedor-user'>
+            <div>
             <TextInput inputClassname="contenedor-user"
                 inputType="text"
                 inputValue={username}
@@ -54,7 +54,7 @@ export default class SignUp extends Component {
                 handleOnChange={this.handleUsernameChange}
                 />
             </div>
-            <div className='contenedor-email'>
+            <div >
             <TextInput inputClassname="contenedor-email"
                 inputType="text"
                 inputValue={email}
@@ -62,7 +62,7 @@ export default class SignUp extends Component {
                 handleOnChange={this.handleEmailChange}
                 />
             </div>
-            <div className='contenedor-password'>
+            <div>
             <TextInput inputClassname="contenedor-password"
                 inputType="password" 
                 inputValue={password}
@@ -70,7 +70,7 @@ export default class SignUp extends Component {
                 handleOnChange={this.handlePasswordChange}
                 />
             </div>
-            <div className='contenedor-password'>
+            <div>
             <TextInput inputClassname="contenedor-password2"
                 inputType="password"
                 inputValue={password2}
