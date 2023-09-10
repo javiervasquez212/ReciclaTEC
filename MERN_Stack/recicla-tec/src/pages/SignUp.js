@@ -71,7 +71,7 @@ export default class SignUp extends Component {
                 />
             </div>
             <div>
-            <TextInput inputClassname="contenedor-password2"
+            <TextInput inputClassname="contenedor-password"
                 inputType="password"
                 inputValue={password2}
                 placeholder="Confirmar contraseña"
