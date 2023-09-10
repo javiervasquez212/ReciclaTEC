@@ -29,7 +29,8 @@ export default class mainPage extends Component {
         <div>
             <div className='componente-encabezado'>
             <h1>Recicla-Tec</h1>
-
+            <a> <img src={require('../../Imagenes/Foto-IG.png')} alt="IG" /> </a>
+            <a> <img src={require('../../Imagenes/Foto-Hamburguer.png')} alt="Hamburguesa" /> </a>
 
             </div>
             <div className='componente-medio'>
