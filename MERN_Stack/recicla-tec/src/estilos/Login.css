@@ -1,4 +1,4 @@
-.contenedor-login {
+.contenedor-principal {
   display: flex;
   flex-direction: column;
   height: 80vh;
@@ -34,7 +34,14 @@ input {
   justify-content: center;
   align-items: center;
   margin-bottom: 10%;
-  margin-top: 30%;
+  margin-top: 10%;
+}
+.contenedor-email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10%;
+  margin-top: 10%;
 }
 
 .button-container {
