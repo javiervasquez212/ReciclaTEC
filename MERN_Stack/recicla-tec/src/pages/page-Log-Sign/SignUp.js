@@ -43,56 +43,46 @@ export default class SignUp extends Component {
   render() {
     const { username, email, password, password2 } = this.state;
     return (
-      <>
+      <div>
       <InicialNavigation />
       <div className='contenedor-principal'> 
         <div className='contenedor-login'>  
           <h1 className='titulo-sign-up'>Registrarse</h1>
           <form>
-            <div>
-            <TextInput inputClassname="contenedor-user"
+            <TextInput className="loginBoxes"
                 inputType="text"
                 inputValue={username}
                 placeholder="Nombre completo"
                 handleOnChange={this.handleUsernameChange}
                 />
-            </div>
-            <div >
-            <TextInput inputClassname="contenedor-email"
+            <TextInput className="loginBoxes"
                 inputType="text"
                 inputValue={email}
                 placeholder="Correo electrónico"
                 handleOnChange={this.handleEmailChange}
                 />
-            </div>
-            <div>
-            <TextInput inputClassname="contenedor-password"
+            <TextInput className="loginBoxes"
                 inputType="password" 
                 inputValue={password}
                 placeholder="Contraseña"
                 handleOnChange={this.handlePasswordChange}
                 />
-            </div>
-            <div>
-            <TextInput inputClassname="contenedor-password"
+            <TextInput className="loginBoxes"
                 inputType="password"
                 inputValue={password2}
                 placeholder="Confirmar contraseña"
                 handleOnChange={this.handlePassword2Change}
                 />
-            </div>
-            <div>
             <Button buttonClassname="boton-anaranjado"
               buttonText="Registrarse"
               handleOnClick={this.handleSignUp}/>
-            </div>
             <p>
               ¿Ya tienes una cuenta? <Link to="/login">Iniciar sesión</Link>
             </p>
           </form>
         </div>
       </div>
-      </>
+      </div>
     )
   }
 }

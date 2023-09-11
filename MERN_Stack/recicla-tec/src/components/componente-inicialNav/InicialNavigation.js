@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function Navigation() {
   return (
+    <div id='headerContainer'>
     <header>
       <nav className='InicialNav'>
         <a href= '/' className='site-title'> Recicla-Tec</a>
@@ -13,5 +14,6 @@ export default function Navigation() {
         </ul>
       </nav>
     </header>
+    </div>
   );
 }

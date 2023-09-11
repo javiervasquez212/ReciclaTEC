@@ -53,3 +53,7 @@ nav li:hover {
   background-color: #c6c5c5;
   border-radius: 5px;
 }
+#headerContainer{
+  display: flex;
+  flex-flow: row nowrap;
+}

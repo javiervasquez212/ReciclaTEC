@@ -60,7 +60,7 @@ export default class Login extends Component {
                 handleOnChange={this.handlePasswordChange} />
 
                 </div>
-                <div>
+                <div id="botonNaranja">
                 <Button buttonClassname="boton-anaranjado" 
                   buttonText="Iniciar sesión"
                   handleOnClick={this.handleLogin}/>
