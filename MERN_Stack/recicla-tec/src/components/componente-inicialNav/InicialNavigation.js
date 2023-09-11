@@ -8,8 +8,8 @@ export default function Navigation() {
       <nav className='InicialNav'>
         <a href= '/' className='site-title'> Recicla-Tec</a>
         <ul>
-          <li> <Link to="/login">Log In</Link> </li>
-          <li> <Link to="/signUp">Sign up</Link> </li>
+          <li className='links'> <Link to="/login">Log In</Link> </li>
+          <li className='links'> <Link to="/signUp">Sign up</Link> </li>
         </ul>
       </nav>
     </header>

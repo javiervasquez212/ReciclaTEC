@@ -4,6 +4,7 @@ import SignUp from './pages/page-Log-Sign/SignUp.js'
 import Home from './pages/page-Home/Home'
 import Developers from './pages/page-Developers/Developers.js';
 import Main from './pages/page-Main/mainPage.js';
+import Menu from './pages/page-Main/menuHamburguer'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // <Navigation/>
@@ -22,6 +23,7 @@ function App() {
         <Route path="/signUp" element={<SignUp />} />
         <Route path="/desarrolladores" element={<Developers />} />
         <Route path="/main" element={<Main />} />
+        <Route path="/menu" element={<Menu />}/>
         {/* Otras rutas */}
       </Routes>
     </Router>

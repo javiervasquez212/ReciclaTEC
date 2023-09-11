@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Button from '../../components/Buttons/Button.js';
 import TextInput from '../../components/componente-EntradaTexto/componenteEntradaTexto';
 
-import InicialNavigation from '../../components/componente-inicialNav/InicialNavigation.js'
+import InicialNavigation from '../../components/componente-inicialNav/InicialNavigation.js';
 
 export default class Login extends Component {
   constructor(props) {
