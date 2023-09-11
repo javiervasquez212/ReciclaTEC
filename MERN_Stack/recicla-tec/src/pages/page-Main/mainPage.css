@@ -1,6 +1,8 @@
-.componente-medio{
-    background: #d9d9d9;
+.componente-final {
+  background: #fff;
 }
-.componente-final{
-    background: #fff;
+.main-page-all {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }

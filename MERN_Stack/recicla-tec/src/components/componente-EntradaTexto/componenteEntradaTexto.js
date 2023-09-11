@@ -6,7 +6,7 @@ function TextInput(props) {
 
   return (
     <input
-      className={`input-text ${inputClassname}`}
+      className={inputClassname}
       type={inputType}
       value={inputValue}
       placeholder={placeholder}

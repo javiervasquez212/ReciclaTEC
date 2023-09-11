@@ -1,0 +1,34 @@
+img.pequenna {
+  width: 30px;
+  height: 30px;
+  margin: 15px 40px 0px 10px;
+  float: right;
+}
+
+img.mediana {
+  width: 50px;
+  height: 50px;
+  margin: 15px 10px 0px 40px;
+  float: left;
+}
+
+.tituloNav {
+  font-size: 30px;
+  margin: 8px 0px 0px 0px;
+}
+.tituloNav:hover {
+  color: #ff8303;
+}
+.cmp-Imagen {
+  justify-content: center;
+  top: 30px;
+}
+.principal {
+  background-color: #91c845;
+  height: 80px;
+}
+
+.NavPrincipal {
+  height: 80px;
+  background-color: inherit;
+}

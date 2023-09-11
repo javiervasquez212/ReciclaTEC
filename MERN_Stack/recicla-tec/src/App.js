@@ -5,6 +5,7 @@ import Home from './pages/page-Home/Home'
 import Developers from './pages/page-Developers/Developers.js';
 import Main from './pages/page-Main/mainPage.js';
 import Menu from './pages/page-Main/menuHamburguer'
+import Historial from './pages/page-Historial/Historial.js';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // <Navigation/>
@@ -24,6 +25,7 @@ function App() {
         <Route path="/desarrolladores" element={<Developers />} />
         <Route path="/main" element={<Main />} />
         <Route path="/menu" element={<Menu />}/>
+        <Route path="/historial" element={<Historial />}/>
         {/* Otras rutas */}
       </Routes>
     </Router>
