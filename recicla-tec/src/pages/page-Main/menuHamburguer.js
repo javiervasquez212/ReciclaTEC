@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import NavSalida from "../../components/componente-navSalida/NavSalida.js";
 import Footer from "../../components/componente-footer/Footer.js";
 import "./menuHamburger.css";
-import { firestore } from "../../Firebase";
-import { addDoc, collection } from "@firebase/firestore";
 export default class menuHamburguer extends Component {
   render() {
     return (
