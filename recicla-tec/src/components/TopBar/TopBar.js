@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom"; // Importar el componente Link
 
-function MainTopBar() {
+function TopBar() {
   const appBarStyle = {
     backgroundColor: "green",
     height: 60,
@@ -22,14 +22,13 @@ function MainTopBar() {
           ReciclaTEC
         </Typography>
         <div style={{ marginLeft: "auto" }}>
-          <Link to="/Login" style={linkStyle}>
-            <Button color="inherit">Login</Button>
+          <Link to="/" style={linkStyle}>
+            <Button color="inherit">Go back</Button>
           </Link>
-          <Button color="inherit">Register</Button>
         </div>
       </Toolbar>
     </AppBar>
   );
 }
 
-export default MainTopBar;
+export default TopBar;
