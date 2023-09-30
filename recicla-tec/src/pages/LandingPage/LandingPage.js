@@ -1,13 +1,12 @@
 import React from "react";
 import "./LandingPage.css";
-import "../../components/TopBar/TopBar";
-import TopBar from "../../components/TopBar/TopBar";
 import GaselLogo from "../../Img/Foto-Gasel.ico";
+import MainTopBar from "../../components/MainTopBar/MainTopBar";
 
 const LandingPage = () => {
   return (
     <div>
-      <TopBar />
+      <MainTopBar />
       <div className="landing-page">
         <div className="centered-image">
           <img src={GaselLogo} />
