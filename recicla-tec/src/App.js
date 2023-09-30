@@ -1,17 +1,15 @@
 import "./App.css";
-
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { routes } from "./routes/routes.js";
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </Router>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {routes.map(({ ...props }, key) => {
+          return <Route {...props} key={key} />;
+        })}
+      </Routes>
+    </BrowserRouter>
   );
 }
-
 export default App;
