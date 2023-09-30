@@ -25,7 +25,9 @@ function MainTopBar() {
           <Link to="/Login" style={linkStyle}>
             <Button color="inherit">Login</Button>
           </Link>
-          <Button color="inherit">Register</Button>
+          <Link to="/Register" style={linkStyle}>
+            <Button color="inherit">Register</Button>
+          </Link>
         </div>
       </Toolbar>
     </AppBar>
