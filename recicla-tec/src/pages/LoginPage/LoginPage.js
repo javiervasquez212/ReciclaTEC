@@ -2,6 +2,7 @@ import React from "react";
 import "./LoginPage.css";
 import { Container, Paper, TextField, Button, Typography } from "@mui/material";
 import TopBar from "../../components/TopBar/TopBar";
+import { Link } from "react-router-dom"; // Importar el componente Link
 
 const Login = () => {
   return (
@@ -54,15 +55,17 @@ const Login = () => {
                 id="password"
                 autoComplete="current-password"
               />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                sx={{ mt: 2, bgcolor: "green", color: "white" }}
-              >
-                Iniciar sesión
-              </Button>
+              <Link to="/RecyclingLog">
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                  sx={{ mt: 2, bgcolor: "green", color: "white" }}
+                >
+                  Iniciar sesión
+                </Button>
+              </Link>
             </form>
           </Paper>
         </Container>
