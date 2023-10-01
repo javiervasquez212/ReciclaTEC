@@ -4,8 +4,13 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom"; // Importar el componente Link
+import AppServices from "../../Services/AppServices";
 
 function TopBar() {
+  const usuarios = async (e) => {
+    const users = await AppServices.getUsers();
+    alert(users);
+  }
   const appBarStyle = {
     backgroundColor: "green",
     height: 60,
@@ -23,7 +28,7 @@ function TopBar() {
         </Typography>
         <div style={{ marginLeft: "auto" }}>
           <Link to="/" style={linkStyle}>
-            <Button color="inherit">Go back</Button>
+            <Button color="inherit" onClick={usuarios}>Go back</Button>
           </Link>
         </div>
       </Toolbar>

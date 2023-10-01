@@ -2,13 +2,18 @@ import React from "react";
 import "./LandingPage.css";
 import GaselLogo from "../../Img/Foto-Gasel.ico";
 import MainTopBar from "../../components/MainTopBar/MainTopBar";
+import AppServices from "../../Services/AppServices";
 
 const LandingPage = () => {
+  
   // Función para redirigir al hacer clic en el logo
   const redirectToLinktree = () => {
     window.location.href = "https://linktr.ee/GaselTEC_Ambiente";
   };
-
+  const usuarios = async (e) => {
+    const users = await AppServices.getUsers();
+    console.log(users);
+  }
   return (
     <div>
       <MainTopBar />

@@ -2,8 +2,12 @@ import React from "react";
 import "./RegisterPage.css"; // Asegúrate de tener un archivo CSS para el estilo
 import { Container, Paper, TextField, Button, Typography } from "@mui/material";
 import TopBar from "../../components/TopBar/TopBar";
-
+import AppServices from "../../Services/AppServices";
 const Register = () => {
+  const registration = async (e) => {
+    const users = await AppServices.registerUser("Javier", "jajajavi@estudiantec.cr", "123456");
+  }
+  registration();
   return (
     <div>
       <TopBar />
