@@ -10,26 +10,48 @@ import {
     updateDoc,
     deleteDoc,
     arrayUnion,
-  } from "firebase/firestore";
+} from "firebase/firestore";
 const usersCollection = collection(db, "users");
 const AppServices = {
-    async getUsers(){
-        try{
-            const q = query(usersCollection);
+    async signIn(pEmail, pPassword) {
+        try {
+            const q = query(usersCollection, where("email", "==", pEmail), where("password", "==", pPassword));
             const querySnapshot = await getDocs(q);
             const users = querySnapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data(),
+                id: doc.id,
+                ...doc.data(),
             }));
-            return { users};
-    
+            if (users.length === 1) {
+                alert("Inicio de sesión exitoso.");
+                return true;
+            }
+            else {
+                alert("Usuario o contraseña incorrectos.");
+                return false;
+            }
         }
-        catch (error){
+        catch (error) {
             console.log("Error getting users: ", error);
         }
     },
-    async registerUser(username, email, password){
-        try{
+
+    async getUsers() {
+        try {
+            const q = query(usersCollection);
+            const querySnapshot = await getDocs(q);
+            const users = querySnapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            return { users };
+
+        }
+        catch (error) {
+            console.log("Error getting users: ", error);
+        }
+    },
+    async registerUser(username, email, password) {
+        try {
             await addDoc(usersCollection, {
                 username: username,
                 email: email,
@@ -37,7 +59,7 @@ const AppServices = {
             });
             alert("Registro exitoso.");
         }
-        catch (error){
+        catch (error) {
             console.log("Error: ", error);
             alert("Ocurrió un error. ");
         }

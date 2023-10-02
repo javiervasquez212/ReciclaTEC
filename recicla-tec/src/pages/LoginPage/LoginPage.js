@@ -3,8 +3,26 @@ import "./LoginPage.css";
 import { Container, Paper, TextField, Button, Typography } from "@mui/material";
 import TopBar from "../../components/TopBar/TopBar";
 import { Link } from "react-router-dom"; // Importar el componente Link
+import AppServices from "../../Services/AppServices";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const loginResult = await AppServices.signIn(email, password);
+      if (loginResult) {
+        navigate("/RecyclingLog");
+      }
+    }	catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div>
       <TopBar />
@@ -62,6 +80,7 @@ const Login = () => {
                   variant="contained"
                   color="primary"
                   sx={{ mt: 2, bgcolor: "green", color: "white" }}
+                  onClick={handleSubmit}
                 >
                   Iniciar sesión
                 </Button>
