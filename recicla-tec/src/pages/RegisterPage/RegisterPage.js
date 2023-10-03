@@ -3,11 +3,17 @@ import "./RegisterPage.css"; // Asegúrate de tener un archivo CSS para el estil
 import { Container, Paper, TextField, Button, Typography } from "@mui/material";
 import TopBar from "../../components/TopBar/TopBar";
 import AppServices from "../../Services/AppServices";
+
 const Register = () => {
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
   const registration = async (e) => {
-    const users = await AppServices.registerUser("JavierQQ", "javenezuela@estudiantec.cr", "12345555");
+    e.preventDefault();
+    await AppServices.registerUser(name, email, password);
   }
-  registration();
+
   return (
     <div>
       <TopBar />
@@ -46,6 +52,8 @@ const Register = () => {
                 label="Nombre"
                 name="name"
                 autoComplete="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
               <TextField
                 variant="outlined"
@@ -56,6 +64,8 @@ const Register = () => {
                 label="Correo electrónico"
                 name="email"
                 autoComplete="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
               />
               <TextField
                 variant="outlined"
@@ -67,6 +77,8 @@ const Register = () => {
                 type="password"
                 id="password"
                 autoComplete="new-password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
               />
               <Button
                 type="submit"

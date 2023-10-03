@@ -3,21 +3,17 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom"; // Importar el componente Link
-import AppServices from "../../Services/AppServices";
+import { useNavigate } from "react-router-dom";
 
 function TopBar() {
-  const usuarios = async (e) => {
-    const users = await AppServices.getUsers();
-    alert(users.users);
-  }
+  const navigate = useNavigate();
   const appBarStyle = {
     backgroundColor: "green",
     height: 60,
   };
-  const linkStyle = {
-    textDecoration: "none",
-    color: "black", // Establecer el color del texto en blanco
+  const goBack = () => {
+    // Utiliza window.history.back() para retroceder en la navegación
+    navigate(-1);
   };
 
   return (
@@ -27,9 +23,7 @@ function TopBar() {
           ReciclaTEC
         </Typography>
         <div style={{ marginLeft: "auto" }}>
-          <Link to="/" style={linkStyle}>
-            <Button color="inherit" onClick={usuarios}>Go back</Button>
-          </Link>
+          <Button color="inherit" onClick={goBack}>Go back</Button>
         </div>
       </Toolbar>
     </AppBar>
