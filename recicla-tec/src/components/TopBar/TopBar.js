@@ -9,7 +9,7 @@ import AppServices from "../../Services/AppServices";
 function TopBar() {
   const usuarios = async (e) => {
     const users = await AppServices.getUsers();
-    alert(users);
+    alert(users.users);
   }
   const appBarStyle = {
     backgroundColor: "green",
@@ -17,7 +17,7 @@ function TopBar() {
   };
   const linkStyle = {
     textDecoration: "none",
-    color: "white", // Establecer el color del texto en blanco
+    color: "black", // Establecer el color del texto en blanco
   };
 
   return (

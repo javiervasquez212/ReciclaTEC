@@ -5,7 +5,7 @@ import TopBar from "../../components/TopBar/TopBar";
 import AppServices from "../../Services/AppServices";
 const Register = () => {
   const registration = async (e) => {
-    const users = await AppServices.registerUser("Javier", "jajajavi@estudiantec.cr", "123456");
+    const users = await AppServices.registerUser("JavierQQ", "javenezuela@estudiantec.cr", "12345555");
   }
   registration();
   return (
@@ -74,6 +74,7 @@ const Register = () => {
                 variant="contained"
                 color="primary"
                 sx={{ mt: 2, bgcolor: "green", color: "white" }}
+                onClick={registration}
               >
                 Registrarse
               </Button>

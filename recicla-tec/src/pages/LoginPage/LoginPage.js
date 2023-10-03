@@ -13,15 +13,13 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    try {
-      const loginResult = await AppServices.signIn(email, password);
-      if (loginResult) {
-        navigate("/RecyclingLog");
-      }
-    }	catch (error) {
-      console.log(error);
+    const users = await AppServices.signIn(email, password);
+    if (users) {
+      navigate("/RecyclingLog");
+    } else {
+      alert("Usuario no encontrado");
     }
-  }
+  };
 
   return (
     <div>
@@ -61,6 +59,8 @@ const Login = () => {
                 label="Correo electrónico"
                 name="email"
                 autoComplete="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
               />
               <TextField
                 variant="outlined"
@@ -72,8 +72,10 @@ const Login = () => {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
               />
-              <Link to="/RecyclingLog">
+              {/* <Link to="/RecyclingLog"> */}
                 <Button
                   type="submit"
                   fullWidth
@@ -84,7 +86,7 @@ const Login = () => {
                 >
                   Iniciar sesión
                 </Button>
-              </Link>
+              {/* </Link> */}
             </form>
           </Paper>
         </Container>

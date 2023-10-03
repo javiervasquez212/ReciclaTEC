@@ -14,11 +14,12 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
+import AppServices from "../../Services/AppServices";
 
 const RecyclingLog = () => {
   const [recycledItems, setRecycledItems] = useState([]);
   const [newItem, setNewItem] = useState({
-    quantity: 0,
+    kg: 0,
     date: "",
     material: "",
   });
@@ -31,11 +32,13 @@ const RecyclingLog = () => {
     });
   };
 
-  const handleAddItem = () => {
-    if (newItem.quantity && newItem.date && newItem.material) {
-      setRecycledItems([...recycledItems, newItem]);
-      setNewItem({ quantity: 0 + "", date: "", material: "" });
-    }
+  const handleAddItem = async (e) => {
+    e.preventDefault();
+    // if (newItem.quantity && newItem.date && newItem.material) {
+    //   setRecycledItems([...recycledItems, newItem]);
+    //   setNewItem({ quantity: 0 + "", date: "", material: "" });
+    // }
+    const item = await AppServices.addRecycledItem(newItem);
   };
 
   return (

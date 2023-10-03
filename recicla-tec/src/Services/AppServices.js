@@ -12,25 +12,24 @@ import {
     arrayUnion,
 } from "firebase/firestore";
 const usersCollection = collection(db, "users");
+const recycledItemsCollection = collection(db, "recyclingLog");
 const AppServices = {
     async signIn(pEmail, pPassword) {
+        console.log("correcto");
         try {
-            const q = query(usersCollection, where("email", "==", pEmail), where("password", "==", pPassword));
-            const querySnapshot = await getDocs(q);
-            const users = querySnapshot.docs.map((doc) => ({
-                id: doc.id,
+            const data = await getDocs(usersCollection);
+            const users = data.docs.map((doc) => ({
                 ...doc.data(),
+                id: doc.id,
             }));
-            if (users.length === 1) {
-                alert("Inicio de sesión exitoso.");
-                return true;
-            }
-            else {
-                alert("Usuario o contraseña incorrectos.");
+            for (let i in users) {
+                if (users[i].email === pEmail && users[i].password === pPassword) {
+                    console.log("Usuario encontrado", users[i]);
+                    return true;
+                }
                 return false;
             }
-        }
-        catch (error) {
+        } catch (error) {
             console.log("Error getting users: ", error);
         }
     },
@@ -63,6 +62,18 @@ const AppServices = {
             console.log("Error: ", error);
             alert("Ocurrió un error. ");
         }
-    }
+    },
+
+    async addRecycledItem(pItem) {
+        try {
+            await addDoc(recycledItemsCollection, pItem);
+            alert("Registro exitoso.");
+            return true;
+        } catch (error) {
+            console.log("Error: ", error);
+            return false;
+        }
+
+    },
 }
 export default AppServices;
