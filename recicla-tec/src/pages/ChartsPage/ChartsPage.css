@@ -1,8 +1,11 @@
 .chart-page {
   justify-content: center;
   align-items: center;
-  background-image: url("../../Img/Background.jpg");
-  width: 100%;
-  height: 100vh;
   display: flex;
+}
+
+.header {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
 }

@@ -38,10 +38,9 @@ const RecyclingLog = () => {
         console.error("Error al obtener datos de Firestore: ", error);
       }
     };
-  
+
     fetchData();
   }, []);
-  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
