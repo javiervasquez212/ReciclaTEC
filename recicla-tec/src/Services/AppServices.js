@@ -18,20 +18,23 @@ const AppServices = {
     },
 
     async signIn(pEmail, pPassword) {
-        console.log("correcto");
         try {
             const data = await getDocs(usersCollection);
             const users = data.docs.map((doc) => ({
                 ...doc.data(),
                 id: doc.id,
             }));
+            if (users.length === 0) {
+                console.log("No hay usuarios");
+                return false;
+            }
             for (let i in users) {
                 if (users[i].email === pEmail && users[i].password === pPassword) {
                     console.log("Usuario encontrado", users[i]);
                     return true;
                 }
-                return false;
             }
+            return false;
         } catch (error) {
             console.log("Error getting users: ", error);
         }
@@ -54,6 +57,22 @@ const AppServices = {
     },
     async registerUser(username, email, password) {
         try {
+            // validar que no hayan usernames y emails repetidos
+            const data = await getDocs(usersCollection);
+            const users = data.docs.map((doc) => ({
+                ...doc.data(),
+                id: doc.id,
+            }));
+            for (let i in users) {
+                if (users[i].username === username) {
+                    alert("El nombre de usuario ya existe");
+                    return;
+                }
+                if (users[i].email === email) {
+                    alert("El correo electrónico ya existe");
+                    return;
+                }
+            }
             await addDoc(usersCollection, {
                 username: username,
                 email: email,
