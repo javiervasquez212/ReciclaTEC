@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./LogsPage.css";
 import TopBar from "../../components/TopBar/TopBar";
 import {
@@ -15,14 +15,32 @@ import {
   TableRow,
 } from "@mui/material";
 import AppServices from "../../Services/AppServices";
+import { getDocs } from "firebase/firestore";
 
 const RecyclingLog = () => {
   const [recycledItems, setRecycledItems] = useState([]);
   const [newItem, setNewItem] = useState({
-    kg: 0,
+    quantity: 0,
     date: "",
     material: "",
   });
+
+  useEffect(() => {
+    // Consulta Firestore para obtener los registros existentes
+    const fetchData = async () => {
+      try {
+        const collectionRef = await AppServices.getRecycledItemsCollection();
+        const querySnapshot = await getDocs(collectionRef);
+        const data = querySnapshot.docs.map((doc) => doc.data());
+        console.log("data", data);
+        setRecycledItems(data);
+      } catch (error) {
+        console.error("Error al obtener datos de Firestore: ", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -38,7 +56,13 @@ const RecyclingLog = () => {
     //   setRecycledItems([...recycledItems, newItem]);
     //   setNewItem({ quantity: 0 + "", date: "", material: "" });
     // }
-    const item = await AppServices.addRecycledItem(newItem);
+    try {
+      await AppServices.addRecycledItem(newItem);
+      setRecycledItems([...recycledItems, newItem]);
+      setNewItem({ quantity: 0 + "", date: "", material: "" });
+    } catch (error) {
+      console.error("Error al agregar registro: ", error);
+    }
   };
 
   return (

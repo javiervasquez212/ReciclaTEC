@@ -1,0 +1,11 @@
+.chart-page {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.header {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}

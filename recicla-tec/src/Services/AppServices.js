@@ -1,19 +1,22 @@
 import { db } from "../Database/Firebase";
 import {
     getDocs,
-    getDoc,
     collection,
     query,
-    where,
-    doc,
     addDoc,
-    updateDoc,
-    deleteDoc,
-    arrayUnion,
 } from "firebase/firestore";
 const usersCollection = collection(db, "users");
 const recycledItemsCollection = collection(db, "recyclingLog");
+
 const AppServices = {
+    async getUserCollection() {
+        return usersCollection;
+    },
+
+    async getRecycledItemsCollection() {
+        return recycledItemsCollection;
+    },
+
     async signIn(pEmail, pPassword) {
         console.log("correcto");
         try {
@@ -60,7 +63,7 @@ const AppServices = {
         }
         catch (error) {
             console.log("Error: ", error);
-            alert("Ocurrió un error. ");
+            alert("Ocurrió un error");
         }
     },
 
