@@ -13,6 +13,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  getToolbarUtilityClass,
 } from "@mui/material";
 import AppServices from "../../Services/AppServices";
 import { getDocs } from "firebase/firestore";
@@ -41,6 +42,10 @@ const RecyclingLog = () => {
 
     fetchData();
   }, []);
+
+  const goToRecyclingChart = () => {
+    window.location.href = "/RecyclingChart";
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -138,13 +143,28 @@ const RecyclingLog = () => {
                 >
                   Agregar Registro
                 </Button>
+                <Button
+                  type="button"
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                  onClick={goToRecyclingChart}
+                  sx={{ mt: 2, bgcolor: "green", color: "white" }}
+                >
+                  Graficos
+                </Button>
               </form>
             </Paper>
             <TableContainer
               component={Paper}
-              sx={{ marginTop: 3, bgcolor: "#E0E0E0" }}
+              sx={{
+                marginTop: 3,
+                bgcolor: "#E0E0E0",
+                maxHeight: "150px",
+                overflowY: "auto",
+              }}
             >
-              <Table>
+              <Table stickyHeader>
                 <TableHead>
                   <TableRow>
                     <TableCell sx={{ textAlign: "center" }}>Cantidad</TableCell>
