@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./LogsPage.css";
 import TopBar from "../../components/TopBar/TopBar";
+import { Link } from "react-router-dom"; // Importar el componente Link
 import {
   Container,
   Paper,
@@ -42,10 +43,6 @@ const RecyclingLog = () => {
 
     fetchData();
   }, []);
-
-  const goToRecyclingChart = () => {
-    window.location.href = "/RecyclingChart";
-  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -143,16 +140,17 @@ const RecyclingLog = () => {
                 >
                   Agregar Registro
                 </Button>
-                <Button
-                  type="button"
-                  fullWidth
-                  variant="contained"
-                  color="primary"
-                  onClick={goToRecyclingChart}
-                  sx={{ mt: 2, bgcolor: "green", color: "white" }}
-                >
-                  Graficos
-                </Button>
+                <Link to="/RecyclingChart">
+                  <Button
+                    type="button"
+                    fullWidth
+                    variant="contained"
+                    color="primary"
+                    sx={{ mt: 2, bgcolor: "green", color: "white" }}
+                  >
+                    Graficos
+                  </Button>
+                </Link>
               </form>
             </Paper>
             <TableContainer
